@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Geo Suite</string>
+    <string name="utm_image_url">http://geokov.com/Images/coordref/utm-zones.png</string>
+</resources>
