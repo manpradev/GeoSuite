@@ -15,7 +15,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -129,6 +128,7 @@ public class UtmcalcActivity extends AppCompatActivity {
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
+        final LoadingDialog ld = new LoadingDialog(this);
         LocationManager lm = (LocationManager)this.getSystemService(this.LOCATION_SERVICE);
         boolean gps_en = false;
         boolean network_en = false;
@@ -152,7 +152,8 @@ public class UtmcalcActivity extends AppCompatActivity {
                             .setNegativeButton("Cancel",null)
                             .show();
         }
-
+        else{
+        ld.startLoadingDialog();
         LocationRequest mLocationRequest = LocationRequest.create();
         mLocationRequest.setInterval(60000);
         mLocationRequest.setFastestInterval(5000);
@@ -160,6 +161,7 @@ public class UtmcalcActivity extends AppCompatActivity {
         LocationCallback mLocationCallback = new LocationCallback() {
             @Override
             public void onLocationResult(LocationResult locationResult) {
+                ld.dismissDialog();
                 if (locationResult == null) {
                     return;
                 }
@@ -168,11 +170,11 @@ public class UtmcalcActivity extends AppCompatActivity {
                         double longLoc = location.getLongitude();
                         EditText editText = (EditText) findViewById(R.id.longInput);
                         editText.setText(String.valueOf(longLoc));
-                        Toast.makeText(UtmcalcActivity.this,"LocReq:"+String.valueOf(longLoc),Toast.LENGTH_SHORT).show();
                     }
                 }
             }
-        };
-        LocationServices.getFusedLocationProviderClient(this).requestLocationUpdates(mLocationRequest, mLocationCallback, null);
+            };
+            LocationServices.getFusedLocationProviderClient(this).requestLocationUpdates(mLocationRequest, mLocationCallback, null);
+        }
     }
 }
