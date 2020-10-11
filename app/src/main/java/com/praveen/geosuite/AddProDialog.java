@@ -47,7 +47,9 @@ public class AddProDialog extends AppCompatDialogFragment {
                            }else if (etProName.getText().toString().matches("")){
                                Toast.makeText(getActivity(), "Please enter the Project Name", Toast.LENGTH_SHORT).show();
                            }
-                           }else {
+                           }
+
+                        else {
                         File root = new File(Environment.getExternalStorageDirectory()+"/"+"GeoSuite");
                         if (!root.exists()) {
                             Log.d(TAG, "Folder exists or not: " + root.exists());
