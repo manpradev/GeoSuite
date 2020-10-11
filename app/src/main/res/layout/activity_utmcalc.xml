@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/app_bg"
     tools:context=".UtmcalcActivity">
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/utm_image"
+        app:srcCompat="@drawable/utm_zones"
         tools:ignore="MissingConstraints" />
 
     <androidx.cardview.widget.CardView

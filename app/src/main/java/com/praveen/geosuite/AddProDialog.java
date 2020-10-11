@@ -3,6 +3,7 @@ package com.praveen.geosuite;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -69,6 +70,10 @@ public class AddProDialog extends AppCompatDialogFragment {
                                 fw.flush();
                                 fw.close();
                                 Toast.makeText(getActivity(), "Project Created", Toast.LENGTH_SHORT).show();
+                                Intent intent = getActivity().getIntent();
+                                getActivity().finish();
+                                startActivity(intent);
+
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
