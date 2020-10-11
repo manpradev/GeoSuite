@@ -43,4 +43,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,UtmcalcActivity.class);
         startActivity(intent);
     }
+
+    public void openGDC(View view) {
+        Intent intent1 = new Intent(this,GdcManager.class);
+        startActivity(intent1);
+    }
 }
