@@ -69,7 +69,6 @@
                 android:id="@+id/gdcimg"
                 android:layout_width="108dp"
                 android:layout_height="80dp"
-                android:tint="#2196F3"
                 app:srcCompat="@drawable/map" />
 
             <TextView

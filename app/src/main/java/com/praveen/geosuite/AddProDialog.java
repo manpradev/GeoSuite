@@ -74,6 +74,7 @@ public class AddProDialog extends AppCompatDialogFragment {
                                 getActivity().finish();
                                 startActivity(intent);
 
+
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }

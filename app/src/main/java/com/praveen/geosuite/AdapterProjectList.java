@@ -3,6 +3,7 @@ package com.praveen.geosuite;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,10 +40,11 @@ public class AdapterProjectList extends RecyclerView.Adapter<AdapterProjectList.
 
     public class ViewHolderProject extends RecyclerView.ViewHolder {
         TextView proName;
+        ImageButton delProBut;
         public ViewHolderProject(@NonNull View itemView) {
             super(itemView);
             proName =(TextView) itemView.findViewById(R.id.projectsName);
-
+            delProBut = (ImageButton) itemView.findViewById(R.id.trashBut);
         }
     }
 
