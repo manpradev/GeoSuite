@@ -71,8 +71,8 @@ public class AddProDialog extends AppCompatDialogFragment {
                                 fw.close();
                                 Toast.makeText(getActivity(), "Project Created", Toast.LENGTH_SHORT).show();
                                 Intent intent = getActivity().getIntent();
-                                getActivity().finish();
-                                startActivity(intent);
+                                //getActivity().finish();
+                                //startActivity(intent);
 
 
                             } catch (IOException e) {
